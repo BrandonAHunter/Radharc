@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SwapTiles : MonoBehaviour {
 	private GameObject[,] tiles;
-	private GameObject[,] awnserKey;
 	private bool clickedOnce = false;
 	private int xPos;
 	private int yPos;
@@ -18,12 +17,12 @@ public class SwapTiles : MonoBehaviour {
 				tiles[i,j] = GameObject.Find("TilePuzzle" + i + "" + j);
 			}
 		}
-		awnserKey = tiles;
 		//randomizes the tiles
 		for (int i = 0; i < 4; i++) {
 			for(int j = 0; j < 4; j++){
 				xPos = i;
 				yPos = j;
+				tiles [i, j].transform.Rotate (0, 0, Random.Range (0, 4) * 90);
 				Swap2Tiles (Random.Range (0, 4), Random.Range (0, 4));
 			}
 		}
@@ -39,20 +38,13 @@ public class SwapTiles : MonoBehaviour {
 				if (Physics.Raycast (ray, out hit)) {
 					if (hit.collider.tag == "Tile") {
 						//Reset Colors
-						for (int i = 0; i < 4; i++) {
-							for (int j = 0; j < 4; j++) {
-								tiles [i, j].gameObject.GetComponent<SpriteRenderer> ().color = Color.white;
-							}
-						}
+						tiles [xPos, yPos].gameObject.GetComponent<SpriteRenderer> ().color = Color.white;
 						//First Click
 						if (!clickedOnce) {
 							for (int i = 0; i < 4; i++) {
 								for (int j = 0; j < 4; j++) {
 									if (tiles [i, j].gameObject == hit.collider.gameObject) {
-										ChangeColor (i - 1, j);
-										ChangeColor (i + 1, j);
-										ChangeColor (i, j - 1);
-										ChangeColor (i, j + 1);
+										ChangeColor (i, j);
 										clickedOnce = true;
 										xPos = i;
 										yPos = j;
@@ -60,29 +52,37 @@ public class SwapTiles : MonoBehaviour {
 								}
 							}
 						}  
-					//Second Click
-					else {
-							if (xPos > 0 && tiles [xPos - 1, yPos].gameObject == hit.collider.gameObject) {
-								Swap2Tiles (xPos - 1, yPos);
-							}
-							if (xPos < 3 && tiles [xPos + 1, yPos].gameObject == hit.collider.gameObject) {
-								Swap2Tiles (xPos + 1, yPos);
-							}
-							if (yPos > 0 && tiles [xPos, yPos - 1].gameObject == hit.collider.gameObject) {
-								Swap2Tiles (xPos, yPos - 1);
-							}
-							if (yPos < 3 && tiles [xPos, yPos + 1].gameObject == hit.collider.gameObject) {
-								Swap2Tiles (xPos, yPos + 1);
+						//Second Click
+						else {
+							for (int i = 0; i < 4; i++) {
+								for (int j = 0; j < 4; j++) {
+									if (tiles [xPos, yPos].gameObject != tiles [i, j] && tiles [i, j] == hit.collider.gameObject) {
+										Swap2Tiles (i, j);
+									}
+								}
 							}
 							clickedOnce = false;
 						}
 					}
 				}
 			}
+			else if(Input.GetMouseButtonDown (1)){
+				if (clickedOnce) {
+					clickedOnce = false;
+					tiles [xPos, yPos].gameObject.GetComponent<SpriteRenderer> ().color = Color.white;
+				}
+				RaycastHit hit = new RaycastHit ();        
+				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+				if (Physics.Raycast (ray, out hit)) {
+					if (hit.collider.tag == "Tile") {
+						hit.collider.gameObject.transform.Rotate (0, 0, 90);
+					}
+				}
+			}
 			GameOver = true;
 			for (int i = 0; i < 4; i++) {
 				for(int j = 0; j < 4; j++){
-					if (tiles [i, j] != GameObject.Find ("TilePuzzle" + i + "" + j))
+					if (tiles [i, j] != GameObject.Find ("TilePuzzle" + i + "" + j) || tiles[i,j].transform.localEulerAngles != new Vector3(0,0,0))
 						GameOver = false;
 				}
 			}
