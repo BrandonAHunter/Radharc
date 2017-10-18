@@ -1,0 +1,8 @@
+R: What is it that I need to do?
+L: It seems that I have forgotten an important duty in Pryshore.
+L: There is this beggar that I always feed. I cannot leave Ader for a couple days. Is there any way you can go to Pryshore and feed the gentleman?
+R: Why can't you leave Ader?
+L: If I leave, then I risk wasting all of these fruits. I would appreciate it if you went in my stead.
+R: I don't have any food to give. Any chance I can take him a banana or something?
+L: He only eats fish. But it's okay. There is a fisherman named Gilroy in that town. He will help you.
+C: Goodbye

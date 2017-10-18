@@ -1,0 +1,7 @@
+L: Okay, so to get the fish, ya have to lower yer hook into da water. I'll go ahead and put a worm on tha hook.
+L: Be careful for debris! They will knock yer worm right off!
+L: Reel yer fish back in when yer've caught it.
+L: I only have 5 worms to give ya, so use them wisely.
+L: Now ya gotta gut tha fish. Just slide tha knife on tha underbelly and I'll do tha rest.
+M: Start Fishing
+C: Goodbye

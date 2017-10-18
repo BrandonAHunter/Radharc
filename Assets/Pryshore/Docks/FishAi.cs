@@ -26,12 +26,12 @@ public class FishAi : MonoBehaviour {
 		else
 			transform.Translate (-Vector2.right * speed * Time.deltaTime);
 
-		if(transform.position.x > 9.0f) {
+		if(transform.position.x > 8.0f) {
 			gameObject.GetComponent<SpriteRenderer> ().flipX = true;
 			dirRight = false;
 		}
 
-		if(transform.position.x < -2.5f) {
+		if(transform.position.x < -8.0f) {
 			dirRight = true;
 			gameObject.GetComponent<SpriteRenderer> ().flipX = false;
 		}

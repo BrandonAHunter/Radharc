@@ -1,0 +1,12 @@
+N: $name enters into town. There is a giant cage in the middle where a girl sits inside of. The townspeople around you don't pay the cage any mind.
+N: $name walks up to the cage.
+R: Why are you here?
+N: The girl's wispy hair whips around her face.
+L: You. You're different.
+R: How so?
+L: You came to me. That makes you different.
+R: How come everybody acts like there is nothing here?
+L: Why do you not?
+N: The girl turns away.
+C: Let me help you.
+C: At least tell me your name.

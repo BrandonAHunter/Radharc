@@ -4,4 +4,79 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Start Menu.unity
+    guid: 588be9d347ee743f089576be84047a18
+  - enabled: 1
+    path: Assets/New Game Menu.unity
+    guid: 50e696109742643e9b5181c47ae86a17
+  - enabled: 1
+    path: Assets/Load Menu.unity
+    guid: 5e9b3991aee8d4683a78967578571502
+  - enabled: 1
+    path: Assets/Locations/Map.unity
+    guid: b63ef2e07a66f46cb80ad2b50b258a6c
+  - enabled: 1
+    path: Assets/Locations/Ader.unity
+    guid: 37a11c9439de84c2bb6313b554300341
+  - enabled: 1
+    path: Assets/Locations/Skylar House.unity
+    guid: 0e04b5f22d9bd475b926ad941acb84cf
+  - enabled: 1
+    path: Assets/Locations/Pryshore.unity
+    guid: 95965af6da514419c8f6bc483c7fa8c5
+  - enabled: 1
+    path: Assets/Locations/Fairmount.unity
+    guid: 11717a5939c1847778dd72b37cefcc11
+  - enabled: 0
+    path: 
+    guid: 19629802b447d4e89b3577da25d27f8b
+  - enabled: 1
+    path: Assets/Locations/Norburn.unity
+    guid: 7eb856a4ef8b84db6a271dace23fb0a8
+  - enabled: 1
+    path: Assets/Locations/Mt. of Talgors.unity
+    guid: e99a8d6d3c0304719afe8f035d80219a
+  - enabled: 1
+    path: Assets/Locations/Castle.unity
+    guid: f4024dba81267440b9a20889f6d68798
+  - enabled: 1
+    path: Assets/Castle Ruins/Owl See, Owl Do.unity
+    guid: cce3f673872694cc8af30412ca10c32c
+  - enabled: 1
+    path: Assets/Cave Opening/Bat Attack.unity
+    guid: 58075ae0d22a147cfa2a6afdfb8f1577
+  - enabled: 1
+    path: Assets/Interior Island Home/Photo Shuffle.unity
+    guid: 9c598860478c64f319621f0624c630ee
+  - enabled: 1
+    path: Assets/Pryshore/Wooden Box/Wooden Box.unity
+    guid: ccc02c9c998554842971a490902975eb
+  - enabled: 1
+    path: Assets/Pryshore/Docks/Fish Food.unity
+    guid: 30354bd4498b84f2792f9b4383b4d04f
+  - enabled: 1
+    path: Assets/Wall Entrence/Wall Builder.unity
+    guid: 368b94eecfac74af5ae44f5e90c24f4f
+  - enabled: 1
+    path: Assets/Pryshore/Skylar House/Riddle Me This.unity
+    guid: 1b2728d5d27bc42c6963c5eae2097dd0
+  - enabled: 1
+    path: Assets/Fairmount/Which Wheel.unity
+    guid: 862106f92eb974f0dabb9c49f3e0ebb6
+  - enabled: 1
+    path: Assets/Locations/Brightsage Forest.unity
+    guid: 6b67293c680b84e6489e44e3a14dff4c
+  - enabled: 1
+    path: Assets/Locations/Bridge To Castle.unity
+    guid: c855a6c36c5ea4f6db53cd2417e9f42e
+  - enabled: 1
+    path: Assets/Locations/Bridge To Island.unity
+    guid: 6fe833cf79a9141a68c2c1098b156a28
+  - enabled: 1
+    path: Assets/Locations/Bridge To Land.unity
+    guid: a2d50e004dceb4029bc6e9009e871eb3
+  - enabled: 1
+    path: Assets/Locations/Island Home.unity
+    guid: 8a5803f57b81b4262afed9dbe43b80d1

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Object
   - Tile
+  - debri
+  - hook
   layers:
   - Default
   - TransparentFX
