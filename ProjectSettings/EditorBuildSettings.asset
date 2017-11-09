@@ -54,7 +54,7 @@ EditorBuildSettings:
     path: Assets/Pryshore/Wooden Box/Wooden Box.unity
     guid: ccc02c9c998554842971a490902975eb
   - enabled: 1
-    path: Assets/Pryshore/Docks/Fish Food.unity
+    path: Assets/Pryshore/Docks/Start Fishing.unity
     guid: 30354bd4498b84f2792f9b4383b4d04f
   - enabled: 1
     path: Assets/Wall Entrence/Wall Builder.unity

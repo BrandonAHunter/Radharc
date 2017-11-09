@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RotatePiece : MonoBehaviour {
 	public GameObject[] peices;
@@ -87,12 +88,8 @@ public class RotatePiece : MonoBehaviour {
 			gameOver = true;
 		}
 		if (gameOver) {
-			solved.text = "You solved the Puzzle";
-
-			for (int i = 0; i < peices.Length; i++) {
-				peices [i].GetComponent<SphereCollider> ().enabled = false;
-			}
-			peices = new GameObject[0];
+			GameManager.Instance.DialogVariables ["$glasses"] = new Yarn.Value (GameManager.Instance.DialogVariables ["$glasses"].AsNumber + 1);
+			SceneManager.LoadScene ("Locations/" + GameManager.Instance.LastScene);
 		}
 	}
 

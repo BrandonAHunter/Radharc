@@ -1,2 +1,0 @@
-L: You should try the fish while you're here.
-C: Goodbye

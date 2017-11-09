@@ -1,2 +1,0 @@
-N: You leave the fruits alone.
-C: Goodbye

@@ -16,17 +16,15 @@ public class SaveGame : MonoBehaviour {
 
 		//Write some text to the test.txt file
 		StreamWriter writer = new StreamWriter(path, false);
-		writer.WriteLine(GameManager.Instance.Name);
+
 		writer.WriteLine(GameManager.Instance.LastScene);
-		writer.WriteLine(GameManager.Instance.Progress);
-		writer.WriteLine(GameManager.Instance.Key);
-		writer.WriteLine(GameManager.Instance.Glasses);
-		writer.WriteLine(GameManager.Instance.Fish);
-		writer.WriteLine(GameManager.Instance.SmWheel);
-		writer.WriteLine(GameManager.Instance.MdWheel);
-		writer.WriteLine(GameManager.Instance.LgWheel);
 		writer.WriteLine(GameManager.Instance.Inventory);
 		writer.WriteLine(GameManager.Instance.Dialog);
+
+		foreach (KeyValuePair<string, Yarn.Value> variable in GameManager.Instance.DialogVariables) {
+			writer.WriteLine (variable.Key + "\t" + variable.Value);
+		}
+
 		writer.Close();
 		Debug.Log ("Saved Game");
 	}
@@ -38,17 +36,15 @@ public class SaveGame : MonoBehaviour {
 		//Read the text from directly from the test.txt file
 		StreamReader reader = new StreamReader(path);
 
-		GameManager.Instance.Name = reader.ReadLine();
 		GameManager.Instance.LastScene = reader.ReadLine();
-		GameManager.Instance.Progress = System.Convert.ToInt32(reader.ReadLine());
-		GameManager.Instance.Key = System.Convert.ToInt32(reader.ReadLine());
-		GameManager.Instance.Glasses = System.Convert.ToInt32(reader.ReadLine());
-		GameManager.Instance.Fish = reader.ReadLine() == "true";
-		GameManager.Instance.SmWheel = reader.ReadLine() == "true";
-		GameManager.Instance.MdWheel = reader.ReadLine() == "true";
-		GameManager.Instance.LgWheel = reader.ReadLine() == "true";
 		GameManager.Instance.Inventory = reader.ReadLine() == "true";
 		GameManager.Instance.Dialog = reader.ReadLine() == "true";
+
+		while (!reader.EndOfStream) {
+			string line = reader.ReadLine ();
+			string[] variable = line.Split('\t');
+			GameManager.Instance.DialogVariables[variable [0]] = new Yarn.Value(variable [1]);
+		}
 
 		reader.Close();
 
@@ -67,31 +63,31 @@ public class SaveGame : MonoBehaviour {
 	}
 
 	public void EnteredName(string name){
-		GameManager.Instance.Name = name;
+		GameManager.Instance.DialogVariables["$name"] = new Yarn.Value(name);
 	}
 
 	void Start(){
-		GameManager.Instance.Name = "Somerled";
+		GameManager.Instance.DialogVariables["$name"] = new Yarn.Value("Somerled");
 		string path = "Saves/Save1.txt";
 
 		//Read the text from directly from the test.txt file
 		StreamReader reader = new StreamReader(path);
 
-		save1.text = reader.ReadLine () + " " + reader.ReadLine ();
+		save1.text =  "Save 1: " + reader.ReadLine ();
 
 		reader.Close();
 		path = "Saves/Save2.txt";
 
 		reader = new StreamReader(path);
 
-		save2.text = reader.ReadLine () + " " + reader.ReadLine ();
+		save2.text = "Save 2: " + reader.ReadLine ();
 
 		reader.Close();
 		path = "Saves/Save3.txt";
 
 		reader = new StreamReader(path);
 
-		save3.text = reader.ReadLine () + " " + reader.ReadLine ();
+		save3.text = "Save 3: " + reader.ReadLine ();
 
 		reader.Close();
 	}

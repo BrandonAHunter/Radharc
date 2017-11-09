@@ -1,8 +1,0 @@
-L: My name does not matter.
-R: Of course it does!
-L: ...
-R: Well, my name is $name, if you ever need me.
-L: $name?
-R: Yes?
-L: Thank you...
-C: Leave

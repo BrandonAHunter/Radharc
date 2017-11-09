@@ -1,0 +1,112 @@
+title: Kyran
+tags: 
+colorID: 0
+position: 721,130
+---
+<<if $kyran is true>>
+	<<if $q is 0>>
+		K: Hello there, young sir! May I interest you in some fruits?
+		[[No, thanks|Kyran.Exit]]
+		[[Sure|Kyran.Fruit]]
+		[[Can you tell me about the girl?|Kyran.Girl]]
+	<<endif>>
+	<<if $q is 1>>
+		<<if $key is 1>>
+			K: Hello, again! Anything new? I suspect that you fed my friend?
+			[[I got this key bit from fishing.|Kyran.Key]]
+		<<else>>
+			K: How is my homeless friend doing?
+		<<endif>>
+	<<endif>>
+<<endif>>
+===
+
+title: Kyran.Fruit
+tags: 
+colorID: 0
+position: 721,130
+---
+K: Enjoy!
+<<set $fruit to $fruit + 1>>
+===
+
+title: Kyran.Girl
+tags: 
+colorID: 0
+position: 721,130
+---
+K: I just got into Ader today. The locals don't pay any mind, so...
+Y: So you just ignore her. Okay...
+K: My boy, could I request something of you?
+He's clearly avoiding the subject...
+[[Tell me more about the girl.|Kyran.Girl2]]
+[[Go on|Kyran.GoOn]]
+===
+
+title: Kyran.Girl2
+tags: 
+colorID: 0
+position: 721,130
+---
+<<set $morality to $morality + 1>>
+<<set $curiosity to $curiosity + 1>>
+K: Like I said, boy, this is the first time I have stepped in this town. How am I supposed to know what this town's norms are?
+He's getting a bit scary...
+[[Never Mind, then.|Kyran.GoOn]]
+===
+
+title: Kyran.GoOn
+tags: 
+colorID: 0
+position: 721,130
+---
+Y: What is it that I need to do?
+<<set $q to 1>>
+K: It seems that I have forgotten an important duty in Pryshore.
+K: There is this beggar that I always feed. I cannot leave Ader for a couple days. Is there any way you can go to Pryshore and feed the gentleman?
+Y: Why can't you leave Ader?
+K: If I leave, then I risk wasting all of these... fruits. I would appreciate it if you went in my stead.
+Y: I don't have any food to give. Any chance I can take him a banana or something?
+K: He only eats fish. But it's okay. There is a fisherman named Gilroy in that town. He will help you.
+[[Back|Kyran.Exit]]
+===
+
+title: Kyran.Key
+tags: 
+colorID: 0
+position: 721,130
+---
+K: A key part you say? Are you sure it's not a decorative piece for some sort of dress? I know many of the femme folk that have decorative metal pieces in their complicated gowns.
+Y: Maybe you're right. Have you heard of any other news around town?
+K: Not of anything in town persay. I did hear something happening in Fairmount, though.
+[[Maybe I'll check it out|Kyran.Q2]]
+[[I have other questions|Kyran.Lens]]
+===
+
+title: Kyran.Lens
+tags: 
+colorID: 0
+position: 721,130
+---
+K: I don't know who that lens belongs to. I'm pretty sure there was a farmer who had lost his glasses at one point. He may still be in Fairmount.
+[[Continue|Kyran.Q2]]
+===
+
+title: Kyran.Q2
+tags: 
+colorID: 0
+position: 721,130
+---
+<<set $q to 2>>
+Y: Well, I guess I will go to Fairmount
+K: Good luck! You will need to cross Blackhall Lake to reach Fairmount. You should reach some more answers there.
+[[back|Kyran.Exit]]
+===
+
+title: Kyran.Exit
+tags: 
+colorID: 0
+position: 721,130
+---
+K: Bye
+===

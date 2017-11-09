@@ -1,0 +1,63 @@
+title: Eon
+tags: 
+colorID: 0
+position: 524,111
+---
+<<if $kyran is false>>
+    Y: Hello.
+	E: Hello...
+	Y: What are you doing?
+	E: I'm waiting for someone.
+	[[Ask about person|Eon.Person]]
+	[[Introduce yourself|Eon.Introduce]]
+<<else>>
+    Y: I don't have any new information.
+    [[Leave|Eon.Exit]]
+<<endif>>
+===
+
+title: Eon.Person
+tags: 
+colorID: 0
+position: 524,111
+---
+	Y: Who are you waiting on?
+	E: I'm waiting for someone to open this door.
+	Y: Oh. Maybe I can try!
+	E: It's not that simple. It's locked. I need someone with the key.
+	Y: I'll track them down for you to get it open!
+	E: Good luck, um...
+	Y: [$name]
+	E: [$name]... Good luck to you, [$name].
+	<<set $kyran to true>>
+	[[Leave|Eon.Exit]] 
+===
+
+title: Eon.Introduce
+tags: 
+colorID: 0
+position: 524,111
+---
+	Y: Oh. Well, my name is [$name]. Nice to meet you.
+	E: Nice... to meet you too...
+	Y: Well, im gonna go now.
+	E: WAIT!
+	Y: Yes?
+	E: Please let me out.
+	Y: I thought you were waiting for someone.
+	E: I... think I am... All I know is that I can't open the door.
+	Y: Oh, let me try...
+	Seems like it's locked.
+	You look at the girl.
+	Y: We'll figure this out.
+	<<set $kyran to true>>
+	[[Leave|Eon.Exit]]
+===
+
+title: Eon.Exit
+tags: 
+colorID: 6
+position: 211,417
+---
+E: Bye.
+===

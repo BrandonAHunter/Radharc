@@ -1,0 +1,52 @@
+title: Skylar
+tags: 
+colorID: 0
+position: 721,130
+---
+<<if $skylar is false>>
+	<<if $glasses is 2>>
+		S: Pssst... Hey you!
+		Y: Me?" you say.
+		S: Yeah. You're [$name], right?
+		How the heck did they know that?
+		S: Listen, I have something to discuss with you, but it's best done inside.
+		You squint.
+		S: You can trust me.
+		[[Goodbye|Skylar.Exit]]
+	<<elseif $glasses is 3>>
+		Y: Here are the glasses.
+		S: I knew it~~!
+		Y: What happened?
+		Skylar grabs your shoulders.
+		S: These are the Elder White Mage's goggles! I was right about trusting you!
+		I am so confused... This guy... girl?... person... is insane.
+		S: It's official. I will join you on your quest to save Éan.
+		Skylar has joined your party
+		Y: Woah, woah, woah. What?
+		S: You're a White Mage, right? Only a White Mage could have rebuilt these.
+		Y: I had no knowledge of these things before today!
+		S: Then I will provide you with the information you need to succeed.
+		<<set $skylar to true>>
+		[[Goodbye|Skylar.Exit]]
+	<<elseif $glasses is 0>>
+		S: something blah blah blah
+		[[Bye|Skylar.Exit]]
+	<<endif>>
+<<elseif $skylar is true>>
+	S: Hello. Need to know anything?
+	Y: Yeah. What's up with the hat?
+	S: I rather like it, do you not?
+	Y: It's a bit strange...
+	S: Well, you're not one to talk of strangeness. You were traveling alone, were you not? It's odd for one of your age to travel by themselves.
+	Y: Point taken.
+	[[Goodbye->Skylar.Exit]]
+<<endif>>
+===
+
+title: Skylar.Exit
+tags: 
+colorID: 0
+position: 721,130
+---
+S: Bye.
+===

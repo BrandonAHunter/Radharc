@@ -1,2 +1,0 @@
-N: You took a fruit.
-C: Goodbye

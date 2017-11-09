@@ -4,86 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-	private int _progress = 0;
-	private int _keyPeices = 0;
-	private int _glassesPeices = 0;
-	private bool _fish = false;
-	private bool _smallWheel = false;
-	private bool _medWheel_Correct = false;
-	private bool _lgWheel = false;
-	private string _name;
 	private bool _invActive = false;
 	private bool _dialogActive = false;
 	private string _lastScene = "Ader";
-	private float _textSpeed = 0.05f;
+	private float _textSpeed = 0.025f;
 	private string _saveFile;
-	private bool _boxInv = false;
-	private bool _boxComp = false;
+	private Dictionary<string, Yarn.Value> variables = new Dictionary<string, Yarn.Value> ();
 
-	public int Progress { 
-		get{
-			return this._progress;
-		}
-		set {
-			this._progress = value;
-		}
-	}
-	public int Key { 
-		get{
-			return this._keyPeices;
-		}
-		set {
-			this._keyPeices = value;
-		}
-	}
-	public int Glasses { 
-		get{
-			return this._glassesPeices;
-		}
-		set {
-			this._glassesPeices = value;
-		}
-	}
-	public bool Fish { 
-		get{
-			return this._fish;
-		}
-		set {
-			this._fish = value;
-		}
-	}
-	public bool SmWheel { 
-		get{
-			return this._smallWheel;
-		}
-		set {
-			this._smallWheel = value;
-		}
-	}
-	public bool MdWheel { 
-		get{
-			return this._medWheel_Correct;
-		}
-		set {
-			this._medWheel_Correct = value;
-		}
-	}
-	public bool LgWheel { 
-		get{
-			return this._lgWheel;
-		}
-		set {
-			this._lgWheel = value;
-		}
-	}
-	public string Name { 
-		get{
-			return this._name;
-		}
-		set {
-			this._name = value;
-		}
-	}
 	public bool Inventory { 
 		get{
 			return this._invActive;
@@ -122,6 +49,14 @@ public class GameManager : MonoBehaviour
 		}
 		set {
 			this._textSpeed = value;
+		}
+	}
+	public Dictionary<string, Yarn.Value> DialogVariables{
+		get{
+			return this.variables;
+		}
+		set {
+			this.variables = value;
 		}
 	}
 

@@ -1,4 +1,0 @@
-L: Hello there, young sir! May I interest you in some fruits?
-C: No, thanks
-C: Sure 
-C: Can you tell me about the girl?

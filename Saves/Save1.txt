@@ -1,11 +1,15 @@
-Somerled
 Pryshore
-2
-0
-0
 False
 False
-False
-False
-False
-False
+$name	[Value: type=String, AsNumber=0, AsBool=True, AsString=Somerled]
+$kyran	[Value: type=Bool, AsNumber=1, AsBool=True, AsString=True]
+$q	[Value: type=Number, AsNumber=1, AsBool=True, AsString=1]
+$key	[Value: type=Number, AsNumber=0, AsBool=False, AsString=0]
+$morality	[Value: type=Number, AsNumber=1, AsBool=True, AsString=1]
+$curiosity	[Value: type=Number, AsNumber=1, AsBool=True, AsString=1]
+$fruit	[Value: type=Number, AsNumber=0, AsBool=False, AsString=0]
+$fish	[Value: type=Number, AsNumber=0, AsBool=False, AsString=0]
+$skylar	[Value: type=Bool, AsNumber=0, AsBool=False, AsString=False]
+$glasses	[Value: type=String, AsNumber=0, AsBool=True, AsString=0]
+$Yarn.ShuffleOptions	[Value: type=Bool, AsNumber=0, AsBool=False, AsString=False]
+$box	[Value: type=Bool, AsNumber=1, AsBool=True, AsString=True]

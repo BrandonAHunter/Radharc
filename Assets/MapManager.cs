@@ -10,11 +10,11 @@ public class MapManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Start () {
-		if (GameManager.Instance.Progress >= 2) {
+		if (GameManager.Instance.DialogVariables["$q"].AsNumber >= 1) {
 			towns [1].gameObject.GetComponent<BoxCollider> ().enabled = true;
 			locks [0].gameObject.GetComponent<SpriteRenderer> ().enabled = false;
 		}
-		if (GameManager.Instance.Progress >= 5) {
+		if (GameManager.Instance.DialogVariables["$q"].AsNumber >= 2) {
 			towns [2].gameObject.GetComponent<BoxCollider> ().enabled = true;
 			locks [1].gameObject.GetComponent<SpriteRenderer> ().enabled = false;
 		}

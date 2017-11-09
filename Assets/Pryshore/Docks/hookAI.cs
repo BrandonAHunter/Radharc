@@ -59,8 +59,7 @@ public class hookAI : MonoBehaviour {
 		}
 		if (hookedObject != null && hookedObject.transform.position.y > 3.5) {
 			Debug.Log ("You Win");
-			GameManager.Instance.Fish = true;
-			GameManager.Instance.Progress++;
+			GameManager.Instance.DialogVariables["$fish"] = new Yarn.Value(1);
 			SceneManager.LoadScene("Pryshore");
 		}
 	}

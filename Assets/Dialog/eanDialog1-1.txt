@@ -1,7 +1,0 @@
-L: What... Do you propose?
-R: I can find you a way out.
-L: I suppose... it is woth a shot...
-R: My name is $name. What is yours?
-L: I.... Don't remember....!
-N: The girl turns away shamefully.
-C: Leave
