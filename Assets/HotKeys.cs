@@ -20,7 +20,7 @@ public class HotKeys : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.I)) {
 			GameManager.Instance.Inventory = !GameManager.Instance.Inventory;
 		}
-		if (!FindObjectOfType<DialogueRunner> ().isDialogueRunning) {
+		if (FindObjectOfType<DialogueRunner> () == null || !FindObjectOfType<DialogueRunner> ().isDialogueRunning) {
 			if (Input.GetKeyDown (KeyCode.M)) {
 				GameManager.Instance.LastScene = SceneManager.GetActiveScene ().name;
 				SceneManager.LoadScene ("Locations/Map");

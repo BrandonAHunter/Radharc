@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour {
 	public GameObject enemy;                // The enemy prefab to be spawned.
-	public float spawnTime = 1.3f;            // How long between each spawn.
+	public float spawnTime = 10.0f;            // How long between each spawn.
 	public Transform[] spawnPoints;         // An array of the spawn points this enemy can spawn from.
 	public Text score;
 	public Text timer;
@@ -25,9 +25,14 @@ public class EnemyController : MonoBehaviour {
 			timeLeft -= Time.deltaTime;
 			timer.text = "" + timeLeft;
 		} else {
+			if (scoreNum >= 20) {
+				gameOver.text = "You Win";
+			}
+			else{
+				gameOver.text = "You Lose";
+			}
 			GameOver = true;
 			timer.text = "0.00000";
-			gameOver.text = "Game Over";
 			CancelInvoke();
 		}
 

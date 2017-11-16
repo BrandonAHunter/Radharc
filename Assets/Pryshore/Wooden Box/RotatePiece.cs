@@ -11,6 +11,7 @@ public class RotatePiece : MonoBehaviour {
 	private bool gameOver;
 	private bool objectSelected = false;
 	private GameObject[] rotatingObjects;
+	private float userForgiveness;
 	void RotateObject() {
 		Vector2 delta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")) * 40.0f;
 
@@ -35,6 +36,7 @@ public class RotatePiece : MonoBehaviour {
 			peices[i].transform.localEulerAngles = new Vector3 (0, 0, Random.Range (30.0f, 330.0f));
 		}
 		rotatingObjects = new GameObject[0];
+		userForgiveness = 3.0f;
 	}
 	void Update(){
 		if (Input.GetMouseButton (0)) {
@@ -73,15 +75,16 @@ public class RotatePiece : MonoBehaviour {
 		}
 		if (Input.GetMouseButtonUp (0)) {
 			for (int i = 0; i < rotatingObjects.Length; i++) {
-				if ((rotatingObjects[i].transform.eulerAngles.z >= 0 && rotatingObjects[i].transform.eulerAngles.z <= 5) || (rotatingObjects[i].transform.eulerAngles.z >= 355 && rotatingObjects[i].transform.eulerAngles.z <= 360)) {
+				if ((rotatingObjects[i].transform.eulerAngles.z >= 0 && rotatingObjects[i].transform.eulerAngles.z <= userForgiveness) || (rotatingObjects[i].transform.eulerAngles.z >= 360 - userForgiveness && rotatingObjects[i].transform.eulerAngles.z <= 360)) {
 					rotatingObjects[i].transform.rotation = Quaternion.identity;
 				}
 			}
 			objectSelected = false;
 			rotatingObjects = new GameObject[0];
 		}
-		for (int i = 0; i < peices.Length; i++) {
-			if (peices [i].transform.localEulerAngles.z != 0) {
+		float zAngle = Mathf.Floor(peices [0].transform.localEulerAngles.z);
+		for (int i = 1; i < peices.Length; i++) {
+			if (peices [i].transform.localEulerAngles.z > zAngle + userForgiveness || peices [i].transform.localEulerAngles.z < zAngle - userForgiveness) {
 				gameOver = false;
 				break;
 			}
@@ -89,6 +92,7 @@ public class RotatePiece : MonoBehaviour {
 		}
 		if (gameOver) {
 			GameManager.Instance.DialogVariables ["$glasses"] = new Yarn.Value (GameManager.Instance.DialogVariables ["$glasses"].AsNumber + 1);
+			GameManager.Instance.DialogVariables ["$box"] = new Yarn.Value (false);
 			SceneManager.LoadScene ("Locations/" + GameManager.Instance.LastScene);
 		}
 	}

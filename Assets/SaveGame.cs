@@ -22,7 +22,14 @@ public class SaveGame : MonoBehaviour {
 		writer.WriteLine(GameManager.Instance.Dialog);
 
 		foreach (KeyValuePair<string, Yarn.Value> variable in GameManager.Instance.DialogVariables) {
-			writer.WriteLine (variable.Key + "\t" + variable.Value);
+			if (variable.Value.type.ToString() == "String") {
+				writer.WriteLine (variable.Key + "\t" + variable.Value.AsString);
+			} else if (variable.Value.type.ToString() == "Bool") {
+				writer.WriteLine (variable.Key + "\t" + variable.Value.AsBool + "\tBool");
+			} else {
+				writer.WriteLine (variable.Key + "\t" + variable.Value.AsNumber + "\tNumber");
+			}
+
 		}
 
 		writer.Close();
@@ -43,7 +50,19 @@ public class SaveGame : MonoBehaviour {
 		while (!reader.EndOfStream) {
 			string line = reader.ReadLine ();
 			string[] variable = line.Split('\t');
-			GameManager.Instance.DialogVariables[variable [0]] = new Yarn.Value(variable [1]);
+			if (variable.Length == 2) {
+				GameManager.Instance.DialogVariables [variable [0]] = new Yarn.Value (variable [1]);
+			}
+			else if(variable[2] == "Bool"){
+				if (variable [1] == "False") {
+					GameManager.Instance.DialogVariables [variable [0]] = new Yarn.Value (false);
+				} else {
+					GameManager.Instance.DialogVariables [variable [0]] = new Yarn.Value (true);
+				}
+			}
+			else if(variable[2] == "Number"){
+				GameManager.Instance.DialogVariables [variable [0]] = new Yarn.Value (float.Parse(variable[1]));
+			}
 		}
 
 		reader.Close();

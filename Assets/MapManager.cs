@@ -18,6 +18,10 @@ public class MapManager : MonoBehaviour {
 			towns [2].gameObject.GetComponent<BoxCollider> ().enabled = true;
 			locks [1].gameObject.GetComponent<SpriteRenderer> ().enabled = false;
 		}
+		if (GameManager.Instance.DialogVariables["$q"].AsNumber >= 3) {
+			towns [3].gameObject.GetComponent<BoxCollider> ().enabled = true;
+			locks [2].gameObject.GetComponent<SpriteRenderer> ().enabled = false;
+		}
 	}
 
 	void Update(){

@@ -1,15 +1,17 @@
-Pryshore
+Mt. of Talgors
 False
 False
-$name	[Value: type=String, AsNumber=0, AsBool=True, AsString=Somerled]
-$kyran	[Value: type=Bool, AsNumber=1, AsBool=True, AsString=True]
-$q	[Value: type=Number, AsNumber=1, AsBool=True, AsString=1]
-$key	[Value: type=Number, AsNumber=0, AsBool=False, AsString=0]
-$morality	[Value: type=Number, AsNumber=1, AsBool=True, AsString=1]
-$curiosity	[Value: type=Number, AsNumber=1, AsBool=True, AsString=1]
-$fruit	[Value: type=Number, AsNumber=0, AsBool=False, AsString=0]
-$fish	[Value: type=Number, AsNumber=0, AsBool=False, AsString=0]
-$skylar	[Value: type=Bool, AsNumber=0, AsBool=False, AsString=False]
-$glasses	[Value: type=String, AsNumber=0, AsBool=True, AsString=0]
-$Yarn.ShuffleOptions	[Value: type=Bool, AsNumber=0, AsBool=False, AsString=False]
-$box	[Value: type=Bool, AsNumber=1, AsBool=True, AsString=True]
+$name	Test Debug
+$kyran	True	Bool
+$q	3	Number
+$key	1	Number
+$morality	1	Number
+$curiosity	1	Number
+$fruit	10	Number
+$fish	0	Number
+$skylar	False	Bool
+$glasses	1	Number
+$box	False	Bool
+$Yarn.ShuffleOptions	False	Bool
+$bats	alive
+$tractor	broken

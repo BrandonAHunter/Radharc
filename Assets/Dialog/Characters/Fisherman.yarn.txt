@@ -6,18 +6,31 @@ position: 721,130
 <<if $key is 0>>
 	Gi: Hello there young lad!
 	<<if $fish is 0>>
-		Gi: Ya look like ya come from aways!
-		Y: That is correct.	
-		Gi: Well, what can a fisherman like me do for yer?
-		Y: The guy at the fruit stand said I could get a fish from you to feed the homeless guy?
-		Gi: Oh, Kyran? Bless his heart. Always fishin' for the old homeless guy.
-		Y: So he doesn't just get a fish from you?
-		Gi: Do I look like a fish bank?
-		Y: ...Yes?
-		Gilroy shakes his head.
-		Gi: Tell me, son. Have ya ever fished before?
-		[[yes|Fisherman.NoTutorial]]
-		[[no|Fisherman.Tutorial]]
+		<<if ! $fishermanSpoke and ! $attempted>>
+			Gi: Ya look like ya come from aways!
+			Y: That is correct.	
+			Gi: Well, what can a fisherman like me do for yer?
+			Y: The guy at the fruit stand said I could get a fish from you to feed the homeless guy?
+			Gi: Oh, Kyran? Bless his heart. Always fishin' for the old homeless guy.
+			Y: So he doesn't just get a fish from you?
+			Gi: Do I look like a fish bank?
+			Y: ...Yes?
+			Gilroy shakes his head.
+			Gi: Tell me, son. Have ya ever fished before?
+			[[Yes|Fisherman.NoTutorial]]
+			[[No|Fisherman.Tutorial]]
+			[[I dont want to fish yet.|Fisherman.Exit]]
+		<<elseif $attempted>>
+			Gi: So that fish got away from yer. Would you like to try again?
+			[[Yes|Fisherman.NoTutorial]]
+			[[How do i Fish again|Fisherman.Tutorial]]
+			[[No|Fisherman.Exit]]
+		<<else>>
+			Gi: Would yer like to fish now?
+			[[Yes|Fisherman.NoTutorial]]
+			[[How do i Fish again|Fisherman.Tutorial]]
+			[[No|Fisherman.Exit]]
+		<<endif>>
 	<<endif>>
 	<<if $fish is 1>>
 		Gi: Did ya give him tha fish, sonny?
@@ -28,11 +41,11 @@ position: 721,130
 <<endif>>
 <<if $q is 3>>
 	<<if $tractor is "broken">>
-		<<if $wheelsm is "false">>
+		<<if $wheelsm is false>>
 			Y: Do you... by chance have a wheel of some sort?
 			Gi: I have this fishing reel from a broken rod. Will that do yer?
 			<<set $wheelsm to true>>
-		<<elseif $wheelsm is false>>
+		<<elseif $wheelsm is true>>
 			Gi: Did that reel work out for yer?
 		<<endif>>
 	<<endif>>
@@ -44,9 +57,8 @@ position: 721,130
 	Gi: I remember my greatest catch like it was yesterday...
 <<endif>>
 <<if $q is 5>>
-Gi: Just me and my fishin' rod against the great ocean.
+	Gi: Just me and my fishin' rod against the great ocean.
 <<endif>>
-[[Back|Fisherman.Exit]]
 ===
 
 title: Fisherman.NoTutorial
@@ -54,6 +66,7 @@ tags:
 colorID: 0
 position: 721,130
 ---
+<<set $attempted to true>>
 <<start fishing game>>
 ===
 
@@ -68,6 +81,7 @@ Gi: Reel yer fish back in when yer've caught it.
 Gi: I only have 5 worms to give ya, so use them wisely.
 Gi: Now ya gotta gut tha fish. Just slide tha knife on tha underbelly and I'll do tha rest.
 [[Start Fishing|Fisherman.NoTutorial]]
+[[Nevermind|Fisherman.Exit]]
 ===
 
 title: Fisherman.Exit
@@ -75,5 +89,6 @@ tags:
 colorID: 0
 position: 721,130
 ---
+<<set $fishermanSpoke to true>>
 Gi: Bye.
 ===

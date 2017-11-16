@@ -210,7 +210,7 @@ namespace Yarn.Unity.Example {
             // "Perform" the command
             Debug.Log ("Command: " + command.text);
 			if(command.text == "start fishing game"){
-				SceneManager.LoadScene ("Pryshore/Docks/Start Fishing");
+				SceneManager.LoadScene ("Mini Games/Start Fishing");
 			}
             yield break;
         }

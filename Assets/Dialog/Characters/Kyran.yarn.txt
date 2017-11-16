@@ -3,21 +3,43 @@ tags:
 colorID: 0
 position: 721,130
 ---
-<<if $kyran is true>>
-	<<if $q is 0>>
-		K: Hello there, young sir! May I interest you in some fruits?
-		[[No, thanks|Kyran.Exit]]
-		[[Sure|Kyran.Fruit]]
+<<if $q is 0>>
+	K: Hello there, young sir! May I interest you in some fruits?
+	[[No, thanks|Kyran.Exit]]
+	[[Sure|Kyran.Fruit]]
+	<<if $kyran is true>>
 		[[Can you tell me about the girl?|Kyran.Girl]]
 	<<endif>>
-	<<if $q is 1>>
-		<<if $key is 1>>
-			K: Hello, again! Anything new? I suspect that you fed my friend?
-			[[I got this key bit from fishing.|Kyran.Key]]
-		<<else>>
-			K: How is my homeless friend doing?
-		<<endif>>
+<<elseif $q < 3>>
+	K: Hello, again! Anything new?
+	<<if $key is 1 and ! visited("Kyran.Key")>>
+		[[I got this key bit from fishing.|Kyran.Key]]
 	<<endif>>
+	<<if $glasses is 1  and ! visited("Kyran.Lens")>>
+		[[I got this glasses peice from a box|Kyran.Lens]]
+	<<endif>>
+	[[Can i get some fruit?|Kyran.Fruit]]
+	[[Not yet|Kyran.Exit]]
+<<elseif $q is 3>>
+	<<if $tractor is "broken" and $wheellg is false>>
+		K: Need anything, my boy?
+		Y: Well, could I borrow the wheel from your cart?
+		K: Sure! Whatever you desire, my boy!
+		<<set $wheellg to true>>
+	<<endif>>
+	<<if $tractor is "fixed">>
+		K: See anything you like?
+	<<elseif $wheellg is true>>
+		K: You already took the wheel.
+	<<endif>>
+	[[Can i get some fruit?|Kyran.Fruit]]
+	[[Goodbye|Kyran.Exit]]
+<<elseif $q is 4>>
+	[[Can i get some fruit?|Kyran.Fruit]]
+	[[Goodbye|Kyran.Exit]]
+<<elseif $q is 5>>
+	[[Can i get some fruit?|Kyran.Fruit]]
+	[[Goodbye|Kyran.Exit]]
 <<endif>>
 ===
 
@@ -27,7 +49,12 @@ colorID: 0
 position: 721,130
 ---
 K: Enjoy!
-<<set $fruit to $fruit + 1>>
+<<if $q < 2>>
+	<<set $fruit to $fruit + 1>>
+<<endif>>
+<<if $q >= 2>>
+	<<set $fruit to $fruit + 1>>
+<<endif>>
 ===
 
 title: Kyran.Girl
@@ -68,7 +95,7 @@ Y: Why can't you leave Ader?
 K: If I leave, then I risk wasting all of these... fruits. I would appreciate it if you went in my stead.
 Y: I don't have any food to give. Any chance I can take him a banana or something?
 K: He only eats fish. But it's okay. There is a fisherman named Gilroy in that town. He will help you.
-[[Back|Kyran.Exit]]
+[[Goodbye|Kyran.Exit]]
 ===
 
 title: Kyran.Key
@@ -80,7 +107,6 @@ K: A key part you say? Are you sure it's not a decorative piece for some sort of
 Y: Maybe you're right. Have you heard of any other news around town?
 K: Not of anything in town persay. I did hear something happening in Fairmount, though.
 [[Maybe I'll check it out|Kyran.Q2]]
-[[I have other questions|Kyran.Lens]]
 ===
 
 title: Kyran.Lens
@@ -89,7 +115,7 @@ colorID: 0
 position: 721,130
 ---
 K: I don't know who that lens belongs to. I'm pretty sure there was a farmer who had lost his glasses at one point. He may still be in Fairmount.
-[[Continue|Kyran.Q2]]
+[[Maybe I'll check it out|Kyran.Q2]]
 ===
 
 title: Kyran.Q2
@@ -100,7 +126,7 @@ position: 721,130
 <<set $q to 2>>
 Y: Well, I guess I will go to Fairmount
 K: Good luck! You will need to cross Blackhall Lake to reach Fairmount. You should reach some more answers there.
-[[back|Kyran.Exit]]
+[[Goodbye|Kyran.Exit]]
 ===
 
 title: Kyran.Exit

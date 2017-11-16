@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class CursorManager : MonoBehaviour {
 	public Texture2D cursor;
@@ -10,8 +11,12 @@ public class CursorManager : MonoBehaviour {
 
 	void OnMouseOver()
 	{
-		if(! GameManager.Instance.Dialog)
+		if (FindObjectOfType<DialogueRunner> () != null) {
+			if (!FindObjectOfType<DialogueRunner> ().isDialogueRunning)
+				Clickable ();
+		} else {
 			Clickable ();
+		}
 	}
 
 	void OnMouseExit()

@@ -28,9 +28,10 @@ position: 721,130
 		S: Then I will provide you with the information you need to succeed.
 		<<set $skylar to true>>
 		[[Goodbye|Skylar.Exit]]
-	<<elseif $glasses is 0>>
-		S: something blah blah blah
-		[[Bye|Skylar.Exit]]
+	<<elseif $glasses < 2>>
+		S: Yes.. Yes this is right
+		S: I am busy, leave me alone
+		[[Goodbye|Skylar.Exit]]
 	<<endif>>
 <<elseif $skylar is true>>
 	S: Hello. Need to know anything?

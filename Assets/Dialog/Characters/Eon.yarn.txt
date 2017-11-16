@@ -3,16 +3,34 @@ tags:
 colorID: 0
 position: 524,111
 ---
-<<if $kyran is false>>
-    Y: Hello.
-	E: Hello...
-	Y: What are you doing?
-	E: I'm waiting for someone.
-	[[Ask about person|Eon.Person]]
-	[[Introduce yourself|Eon.Introduce]]
-<<else>>
-    Y: I don't have any new information.
+<<if $q is 0>>
+	<<if $kyran is false>>
+    	Y: Hello.
+		E: Hello...
+		Y: What are you doing?
+		E: I'm waiting for someone.
+		[[Ask about person|Eon.Person]]
+		[[Introduce yourself|Eon.Introduce]]
+	<<else>>
+    	I don't have any new information.
+    	[[Leave|Eon.Exit]]
+	<<endif>>
+<<endif>>
+<<if $q > 0>>
+    I don't have any new information.
     [[Leave|Eon.Exit]]
+<<endif>>
+<<if $key is 3>>
+	E: You have returned.
+	Y: Of course I did.
+	E: I assume... you found a way?
+	You hold up the built key
+	<<if $morality < 5>>
+		[[Unlock door|Eon.End]]
+	<<endif>>
+	<<if $morality > 5>>
+		[[Unlock door|Eon.GoodEnd]]
+	<<endif>>
 <<endif>>
 ===
 
@@ -52,6 +70,20 @@ position: 524,111
 	Y: We'll figure this out.
 	<<set $kyran to true>>
 	[[Leave|Eon.Exit]]
+===
+
+title: Eon.End
+tags: 
+colorID: 6
+position: 211,417
+---
+===
+
+title: Eon.GoodEnd
+tags: 
+colorID: 6
+position: 211,417
+---
 ===
 
 title: Eon.Exit

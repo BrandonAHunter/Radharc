@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour {
 
+	void Start(){
+		GameManager.Instance.LastScene = SceneManager.GetActiveScene ().name;
+	}
 	void OnMouseDown(){
 		SceneManager.LoadScene("Locations/" + this.gameObject.name);
 	}
