@@ -9,7 +9,7 @@ position: 721,130
 	Gg: Better watch out, boy. This aint no safe place to be romin' round, ya hear?
 	Y: What makes it so dangerous?
 	Gg: Them danggone bats. They WILL suck the blood right out of ya.
-	There is a slight pause.
+	N: There is a slight pause.
 	Gg: You know what? I could use a young'un to do some things for me.
 	Y: What do you need?
 	Gg: Could you do an old man like me a favor and fix my tractor? I seem to have lost the wheel.
@@ -35,9 +35,9 @@ tags:
 colorID: 0
 position: 721,130
 ---
-Gg: Oh! Thank you for killing those peky blood-suckers for me!
-Gg: I would have gone myself, but those dangone mountains are too steep.
-Y: Right...
+Gg: Oh! Thank you for killing those peeky blood-suckers for me!
+Gg: I would have gone myself, but those dangone mountain slopes are too steep.
+Y: Don't mention it...
 ===
 
 title: Farmer.Tractor
@@ -46,9 +46,9 @@ colorID: 0
 position: 721,130
 ---
 Gg: Well then. I should thank you somehow.
-He rummages through some of his pockets.
+N: He rummages through some of his pockets.
 Gg: I have no use for this. Haven't for a long time.
-He hands you rims for glasses
+N: He hands you the rim of some spectacles.
 <<set $glasses to 2>>
 <<set $q to 4>>
 ===
@@ -58,5 +58,5 @@ tags:
 colorID: 0
 position: 721,130
 ---
-Gg: bye.
+Gg: Bye.
 ===

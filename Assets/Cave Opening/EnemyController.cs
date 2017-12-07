@@ -2,42 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Yarn.Unity;
 
 public class EnemyController : MonoBehaviour {
-	public GameObject enemy;                // The enemy prefab to be spawned.
-	public float spawnTime = 10.0f;            // How long between each spawn.
-	public Transform[] spawnPoints;         // An array of the spawn points this enemy can spawn from.
-	public Text score;
-	public Text timer;
-	public Text gameOver;
-	public float scoreNum = 0;
-	public bool GameOver;
-	private float timeLeft = 30.0f;
+	public GameObject enemy;
+	public Transform[] spawnPoints;
+
+	public bool Killable = true;
+	public bool GameOver = false;
+	public float numOfBats = 0;
+
+	private float spawnTime = 1.3f;
+	private float timeLeft = 45.0f;
 	void Start ()
 	{
+		spawnTime = 0.7f;
 		// Call the Spawn function after a delay of the spawnTime and then continue to call after the same amount of time.
 		InvokeRepeating ("Spawn", spawnTime, spawnTime);
 	}
 
 	void Update(){
 		if (timeLeft > 0) {
-			score.text = "score: " + scoreNum;
 			timeLeft -= Time.deltaTime;
-			timer.text = "" + timeLeft;
-		} else {
-			if (scoreNum >= 20) {
-				gameOver.text = "You Win";
-			}
-			else{
-				gameOver.text = "You Lose";
-			}
+		} else if(! GameOver){
+			Debug.Log("you win");
 			GameOver = true;
-			timer.text = "0.00000";
+			Killable = false;
 			CancelInvoke();
+			FindObjectOfType<DialogueRunner> ().StartDialogue ("Cave.Win");
 		}
 
-	}
+		if(numOfBats == 15 && Killable){
+			Debug.Log ("you loss");
+			Killable = false;
+			FindObjectOfType<DialogueRunner> ().StartDialogue ("Cave.Lose");
+		}
 
+		if(numOfBats == 30){
+			CancelInvoke();
+		}
+	}
 
 	void Spawn ()
 	{
@@ -46,5 +50,7 @@ public class EnemyController : MonoBehaviour {
 
 		// Create an instance of the enemy prefab at the randomly selected spawn point's position and rotation.
 		Instantiate (enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+
+		numOfBats++;
 	}
 }

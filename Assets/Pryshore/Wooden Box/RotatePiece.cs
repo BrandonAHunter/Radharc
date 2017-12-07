@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Yarn.Unity;
+using Yarn.Unity.Example;
 
 public class RotatePiece : MonoBehaviour {
 	public GameObject[] peices;
 	public Text solved;
+	public AudioSource unlock;
 
 	private bool gameOver;
+	private bool unlockMusic;
 	private bool objectSelected = false;
 	private GameObject[] rotatingObjects;
 	private float userForgiveness;
@@ -37,9 +41,10 @@ public class RotatePiece : MonoBehaviour {
 		}
 		rotatingObjects = new GameObject[0];
 		userForgiveness = 3.0f;
+		unlockMusic = false;
 	}
 	void Update(){
-		if (Input.GetMouseButton (0)) {
+		if (Input.GetMouseButton (0) && ! gameOver) {
 			if (!objectSelected) {
 				RaycastHit hit = new RaycastHit ();        
 				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
@@ -73,27 +78,39 @@ public class RotatePiece : MonoBehaviour {
 				RotateObject ();
 
 		}
-		if (Input.GetMouseButtonUp (0)) {
-			for (int i = 0; i < rotatingObjects.Length; i++) {
-				if ((rotatingObjects[i].transform.eulerAngles.z >= 0 && rotatingObjects[i].transform.eulerAngles.z <= userForgiveness) || (rotatingObjects[i].transform.eulerAngles.z >= 360 - userForgiveness && rotatingObjects[i].transform.eulerAngles.z <= 360)) {
-					rotatingObjects[i].transform.rotation = Quaternion.identity;
-				}
-			}
+		if (Input.GetMouseButtonUp (0) && ! gameOver) {
+			
 			objectSelected = false;
 			rotatingObjects = new GameObject[0];
-		}
-		float zAngle = Mathf.Floor(peices [0].transform.localEulerAngles.z);
-		for (int i = 1; i < peices.Length; i++) {
-			if (peices [i].transform.localEulerAngles.z > zAngle + userForgiveness || peices [i].transform.localEulerAngles.z < zAngle - userForgiveness) {
-				gameOver = false;
-				break;
+			float zAngle = Mathf.Floor(peices [0].transform.localEulerAngles.z);
+			for (int i = 1; i < peices.Length; i++) {
+				if (peices [i].transform.localEulerAngles.z > zAngle + userForgiveness || peices [i].transform.localEulerAngles.z < zAngle - userForgiveness) {
+					gameOver = false;
+					break;
+				}
+				gameOver = true;
 			}
-			gameOver = true;
 		}
 		if (gameOver) {
-			GameManager.Instance.DialogVariables ["$glasses"] = new Yarn.Value (GameManager.Instance.DialogVariables ["$glasses"].AsNumber + 1);
-			GameManager.Instance.DialogVariables ["$box"] = new Yarn.Value (false);
-			SceneManager.LoadScene ("Locations/" + GameManager.Instance.LastScene);
+			for (int i = 0; i < peices.Length; i++) {
+				if ((peices[i].transform.eulerAngles.z >= 0 && peices[i].transform.eulerAngles.z <= userForgiveness) || (peices[i].transform.eulerAngles.z >= 360 - userForgiveness && peices[i].transform.eulerAngles.z <= 360)) {
+					peices[i].transform.rotation = Quaternion.identity;
+				}
+			}
+			for (int i = 0; i < peices.Length; i++) {
+				if (peices [i].transform.localEulerAngles.z >= 180 && peices [i].transform.localEulerAngles.z != 0) {
+					peices [i].transform.Rotate (new Vector3 (0, 0, 1), 20.0f * Time.deltaTime);
+				} else if (peices [i].transform.localEulerAngles.z < 180 && peices [i].transform.localEulerAngles.z != 0){
+					peices [i].transform.Rotate (new Vector3 (0, 0, -1), 20.0f * Time.deltaTime);
+				}
+			}
+			if(peices[0].transform.localEulerAngles.z == 0 && ! unlockMusic){
+				unlock.Play ();
+				unlockMusic = true;
+				FindObjectOfType<DialogueRunner> ().StartDialogue ("Box");
+				GameManager.Instance.DialogVariables ["$glasses"] = new Yarn.Value (GameManager.Instance.DialogVariables ["$glasses"].AsNumber + 1);
+				GameManager.Instance.DialogVariables ["$box"] = new Yarn.Value (false);
+			}
 		}
 	}
 

@@ -1,0 +1,10 @@
+title: Wheel
+tags: 
+colorID: 0
+position: 524,111
+---
+Y: Maybe this wheel will work with the tractor?
+<<set $wheellg to true>>
+<<set $wheelLgGet to true>>
+<<disable wheel>>
+===

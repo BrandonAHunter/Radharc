@@ -17,19 +17,19 @@ position: 721,130
 			Y: ...Yes?
 			Gilroy shakes his head.
 			Gi: Tell me, son. Have ya ever fished before?
-			[[Yes|Fisherman.NoTutorial]]
-			[[No|Fisherman.Tutorial]]
+			[[Yes.|Fisherman.NoTutorial]]
+			[[No. Can you tell me how?|Fisherman.Tutorial]]
 			[[I dont want to fish yet.|Fisherman.Exit]]
 		<<elseif $attempted>>
 			Gi: So that fish got away from yer. Would you like to try again?
-			[[Yes|Fisherman.NoTutorial]]
-			[[How do i Fish again|Fisherman.Tutorial]]
-			[[No|Fisherman.Exit]]
+			[[Yes.|Fisherman.NoTutorial]]
+			[[How do I Fish again?|Fisherman.Tutorial]]
+			[[No.|Fisherman.Exit]]
 		<<else>>
 			Gi: Would yer like to fish now?
-			[[Yes|Fisherman.NoTutorial]]
-			[[How do i Fish again|Fisherman.Tutorial]]
-			[[No|Fisherman.Exit]]
+			[[Yes.|Fisherman.NoTutorial]]
+			[[How do I Fish again|Fisherman.Tutorial]]
+			[[No.|Fisherman.Exit]]
 		<<endif>>
 	<<endif>>
 	<<if $fish is 1>>
@@ -40,18 +40,7 @@ position: 721,130
 	Gi: What is life without fishin'?
 <<endif>>
 <<if $q is 3>>
-	<<if $tractor is "broken">>
-		<<if $wheelsm is false>>
-			Y: Do you... by chance have a wheel of some sort?
-			Gi: I have this fishing reel from a broken rod. Will that do yer?
-			<<set $wheelsm to true>>
-		<<elseif $wheelsm is true>>
-			Gi: Did that reel work out for yer?
-		<<endif>>
-	<<endif>>
-	<<if $tractor is "fixed">>
-		Gi: I just missed the biggest catch of this season!
-	<<endif>>
+	Gi: I just missed the biggest catch of this season!
 <<endif>>
 <<if $q is 4>>
 	Gi: I remember my greatest catch like it was yesterday...
@@ -75,13 +64,12 @@ tags:
 colorID: 0
 position: 721,130
 ---
-Gi: Okay, so to get the fish, ya have to lower yer hook into da water. I'll go ahead and put a worm on tha hook.
+Gi: Okay, so to get the fish, ya have to lower yer hook into da water by pressing the "Down Arrow Key".
 Gi: Be careful for debris! They will knock yer worm right off!
-Gi: Reel yer fish back in when yer've caught it.
-Gi: I only have 5 worms to give ya, so use them wisely.
-Gi: Now ya gotta gut tha fish. Just slide tha knife on tha underbelly and I'll do tha rest.
-[[Start Fishing|Fisherman.NoTutorial]]
-[[Nevermind|Fisherman.Exit]]
+Gi: Reel yer fish back in when yer've caught it by pressing "Up Arrow Key".
+Gi: I've only got 5 worms to give ya right now, so use 'em wisely.
+[[Start Fishing.|Fisherman.NoTutorial]]
+[[Nevermind.|Fisherman.Exit]]
 ===
 
 title: Fisherman.Exit

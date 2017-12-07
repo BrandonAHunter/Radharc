@@ -8,16 +8,16 @@ position: 721,130
 	Y: Here is a fish for you to eat.
 	H: Why, thank you so much. How did you know it was my favorite?
 	Y: Kyran...
-	At least I think that's his name...
+	T: At least I think that's his name...
 	Y: ...sent me.
 	H: Give him my gratitude for me, please.
-	The homeless guy eats the fish
+	N: The homeless guy eats the fish
 	<<set $fish to 0>>
 	H: Here, take this. I don't need it anymore.
-	[[take box|Homeless.TakeBox]]
+	[[Take the box.|Homeless.TakeBox]]
 <<else>>
 	H: What brings you to Pryshore?
-	[[Just passing through|Homeless.Exit]]
+	[[I'm just passing through.|Homeless.Exit]]
 <<endif>>
 ===
 
@@ -26,8 +26,8 @@ tags:
 colorID: 0
 position: 721,130
 ---
-	Y: Thank you
-	H: No problem, bye
+	Y: Thank you.
+	H: You're welcome. Please go thank Kyran for me. 
 	<<set $box to true>>
 ===
 

@@ -7,6 +7,7 @@ using Yarn.Unity;
 public class HotKeys : MonoBehaviour {
 	public GameObject inventoryPanel;
 	private SaveGame s;
+	public GameObject letter;
 
 	void Start(){
 		s = new SaveGame ();
@@ -26,7 +27,17 @@ public class HotKeys : MonoBehaviour {
 				SceneManager.LoadScene ("Locations/Map");
 			}
 			if (Input.GetKeyDown (KeyCode.S) && !GameManager.Instance.Dialog) {
-				s.Save (GameManager.Instance.SaveFile);
+				s.WriteSave (GameManager.Instance.SaveFile);
+			}
+			if (Input.GetKeyDown (KeyCode.P)) {
+				SceneManager.LoadScene ("Pause");
+			}
+			if (letter.activeInHierarchy && Input.GetMouseButtonDown (0)) {
+				letter.SetActive (false);
+				BoxCollider[] disable = GameObject.FindObjectsOfType<BoxCollider> ();
+				for (int i = 0; i < disable.Length; i++) {
+					disable [i].enabled = true;
+				}
 			}
 		}
 	}

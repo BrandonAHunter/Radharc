@@ -38,8 +38,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Locations/Mt. of Talgors.unity
     guid: e99a8d6d3c0304719afe8f035d80219a
-  - enabled: 1
-    path: Assets/Locations/Castle.unity
+  - enabled: 0
+    path: 
     guid: f4024dba81267440b9a20889f6d68798
   - enabled: 1
     path: Assets/Mini Games/Owl See, Owl Do.unity
@@ -59,24 +59,33 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Mini Games/Wall Builder.unity
     guid: 368b94eecfac74af5ae44f5e90c24f4f
-  - enabled: 1
-    path: Assets/Mini Games/Riddle Me This.unity
+  - enabled: 0
+    path: 
     guid: 1b2728d5d27bc42c6963c5eae2097dd0
-  - enabled: 1
-    path: Assets/Mini Games/Which Wheel.unity
+  - enabled: 0
+    path: 
     guid: 862106f92eb974f0dabb9c49f3e0ebb6
-  - enabled: 1
-    path: Assets/Locations/Brightsage Forest.unity
+  - enabled: 0
+    path: 
     guid: 6b67293c680b84e6489e44e3a14dff4c
-  - enabled: 1
-    path: Assets/Locations/Bridge To Castle.unity
+  - enabled: 0
+    path: 
     guid: c855a6c36c5ea4f6db53cd2417e9f42e
-  - enabled: 1
-    path: Assets/Locations/Bridge To Island.unity
+  - enabled: 0
+    path: 
     guid: 6fe833cf79a9141a68c2c1098b156a28
-  - enabled: 1
-    path: Assets/Locations/Bridge To Land.unity
+  - enabled: 0
+    path: 
     guid: a2d50e004dceb4029bc6e9009e871eb3
-  - enabled: 1
-    path: Assets/Locations/Island Home.unity
+  - enabled: 0
+    path: 
     guid: 8a5803f57b81b4262afed9dbe43b80d1
+  - enabled: 1
+    path: Assets/Options Menu.unity
+    guid: db9d4499a2e7849c795120df14224b64
+  - enabled: 0
+    path: 
+    guid: 5a6fa192adb944c418ba21986ff09443
+  - enabled: 1
+    path: Assets/Pause.unity
+    guid: 6a7cccb22e24a495aa2de1ff25778464

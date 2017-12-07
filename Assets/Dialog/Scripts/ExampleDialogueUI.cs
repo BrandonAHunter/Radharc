@@ -31,6 +31,7 @@ using System.Text;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
+
 namespace Yarn.Unity.Example {
     /// Displays dialogue lines to the player, and sends
     /// user choices back to the dialogue system.
@@ -42,7 +43,7 @@ namespace Yarn.Unity.Example {
      */
     public class ExampleDialogueUI : Yarn.Unity.DialogueUIBehaviour
     {
-
+		public GameObject Letter;
         /// The object that contains the dialogue and the options.
         /** This object will be enabled when conversation starts, and 
          * disabled when it ends.
@@ -93,8 +94,18 @@ namespace Yarn.Unity.Example {
         /// Show a line of dialogue, gradually
         public override IEnumerator RunLine (Yarn.Line line)
         {
+			lineText.fontStyle = FontStyle.Normal;
 			if(line.text.StartsWith("Y: ")){
 				line.text = line.text.Replace ("Y: ", "");
+				people [0].SetActive (true);
+			}
+			else if(line.text.StartsWith("N: ")){
+				line.text = line.text.Replace ("N: ", "");
+				lineText.fontStyle = FontStyle.Italic;
+			}
+			else if(line.text.StartsWith("T: ")){
+				line.text = line.text.Replace ("T: ", "");
+				lineText.fontStyle = FontStyle.Italic;
 				people [0].SetActive (true);
 			}
 			else if(line.text.StartsWith("E: ")){
@@ -105,17 +116,21 @@ namespace Yarn.Unity.Example {
 				line.text = line.text.Replace ("K: ", "");
 				people [2].SetActive (true);
 			}
-			if(line.text.StartsWith("H: ")){
+			else if(line.text.StartsWith("H: ")){
 				line.text = line.text.Replace ("H: ", "");
-				people [1].SetActive (true);
+				people [2].SetActive (true);
 			}
 			else if(line.text.StartsWith("Gi: ")){
 				line.text = line.text.Replace ("Gi: ", "");
-				people [2].SetActive (true);
+				people [1].SetActive (true);
 			}
 			else if(line.text.StartsWith("S: ")){
 				line.text = line.text.Replace ("S: ", "");
 				people [3].SetActive (true);
+			}
+			else if(line.text.StartsWith("Gg: ")){
+				line.text = line.text.Replace ("Gg: ", "");
+				people [1].SetActive (true);
 			}
             // Show the text
             lineText.gameObject.SetActive (true);
@@ -127,7 +142,7 @@ namespace Yarn.Unity.Example {
 				foreach (char c in CheckVars(line.text)) {
                     stringBuilder.Append (c);
 					lineText.text = stringBuilder.ToString ();
-					yield return new WaitForSeconds (textSpeed);
+					yield return new WaitForSeconds (GameManager.Instance.TextSpeed);
 					if (Input.GetKey(KeyCode.Space)) {
 						lineText.text = CheckVars(line.text);
 						break;
@@ -211,6 +226,25 @@ namespace Yarn.Unity.Example {
             Debug.Log ("Command: " + command.text);
 			if(command.text == "start fishing game"){
 				SceneManager.LoadScene ("Mini Games/Start Fishing");
+			}
+			else if(command.text == "go to town"){
+				SceneManager.LoadScene ("Locations/" + GameManager.Instance.LastScene);
+			}
+			else if(command.text == "go to cave"){
+				SceneManager.LoadScene ("Mini Games/Bat Attack");
+			}
+			else if(command.text == "go to box"){
+				SceneManager.LoadScene ("Mini Games/Wooden Box");
+			}
+			else if(command.text == "go to letter"){
+				BoxCollider[] disable = GameObject.FindObjectsOfType<BoxCollider> ();
+				for (int i = 0; i < disable.Length; i++) {
+					disable [i].enabled = false;
+				}
+				Letter.SetActive (true);
+			}
+			else if(command.text == "disable wheel"){
+				GameObject.Find ("Wheel").SetActive (false);
 			}
             yield break;
         }

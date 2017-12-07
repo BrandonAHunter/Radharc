@@ -1,0 +1,44 @@
+title: Tracktor
+tags: 
+colorID: 0
+position: 524,111
+---
+<<if $tractor is "broken">>
+	Y: This tractor looks broken. It seems to be missing a front wheel.
+<<endif>>
+<<if $wheelsm is true>>
+	[[Try Small Wheel|Tracktor.SmallWheel]]
+<<endif>>
+<<if $wheelmd is true>>
+	[[Try Medium Wheel|Tracktor.MediumWheel]]
+<<endif>>
+<<if $wheellg is true>>
+	[[Try Large Wheel|Tracktor.LargeWheel]]
+<<endif>>
+<<if $tractor is "fixed">>
+	Y: I did a good job fixing this tractor.
+<<endif>>
+===
+
+title: Tracktor.SmallWheel
+tags: 
+colorID: 0
+position: 524,111
+---
+N: You try to use the small wheel.
+N: The wheel is a fit.
+<<set $tractor to "fixed">>
+<<set $wheelsm to false>>
+<<set $wheellg to false>>
+===
+
+title: Tracktor.LargeWheel
+tags: 
+colorID: 0
+position: 524,111
+---
+N: You try to use the larger wheel.
+N: The wheel is way to big to fit the tractor.
+Y: Oh... Well that won't work.
+<<set $wheellg to false>>
+===

@@ -1,0 +1,83 @@
+title: Inventory.Box
+tags: 
+colorID: 0
+position: 524,111
+---
+	T: This Box Looks like it has a puzzle ring on it
+	[[Try to Open|Inventory.Box.Open]]
+	[[Leave Alone|Inventory.Leave]]
+===
+
+title: Inventory.Box.Open
+tags: 
+colorID: 0
+position: 524,111
+---
+	<<go to box>>
+===
+
+title: Inventory.Letter
+tags: 
+colorID: 0
+position: 524,111
+---
+	T: This is a letter from my father
+	[[Read|Inventory.Letter.Open]]
+	[[Leave Alone|Inventory.Leave]]
+===
+
+title: Inventory.Letter.Open
+tags: 
+colorID: 0
+position: 524,111
+---
+	<<go to letter>>
+===
+
+title: Inventory.Fruit
+tags: 
+colorID: 0
+position: 524,111
+---
+	T: I am not that hungry right now...
+===
+
+title: Inventory.Fish
+tags: 
+colorID: 0
+position: 524,111
+---
+	T: I should give this to the homeless man in Pryshore.
+===
+
+title: Inventory.Key
+tags: 
+colorID: 0
+position: 524,111
+---
+	T: This looks like a peice of a key.
+===
+
+title: Inventory.Glasses
+tags: 
+colorID: 0
+position: 524,111
+---
+	T: Broken glasses... not very useful
+===
+
+title: Inventory.Wheel
+tags: 
+colorID: 0
+position: 524,111
+---
+	T: I should try this wheel on the tractor.
+===
+
+title: Inventory.Leave
+tags: 
+colorID: 0
+position: 524,111
+---
+T: Maybe later...
+===

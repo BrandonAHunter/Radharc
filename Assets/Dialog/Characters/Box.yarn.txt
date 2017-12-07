@@ -1,0 +1,9 @@
+title: Box
+tags: 
+colorID: 0
+position: 524,111
+---
+Y: Finnaly got that box opened.
+Y: Lets see what we got here... Looks like a part of some spectacles. 
+<<go to town>>
+===

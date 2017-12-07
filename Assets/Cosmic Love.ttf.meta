@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 077d90b466ca6428ca32a42eddc07423
+timeCreated: 1512444621
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Cosmic Love
+  fontNames:
+  - Cosmic Love
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

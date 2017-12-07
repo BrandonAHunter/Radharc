@@ -18,4 +18,11 @@ public class TalkTo : MonoBehaviour {
 			talking = false;
 		}
 	}
+
+	public void TalkButton(){
+		if (!talking  && ! FindObjectOfType<DialogueRunner> ().isDialogueRunning) {
+			talking = true;
+			FindObjectOfType<DialogueRunner> ().StartDialogue (this.gameObject.GetComponent<NPC> ().talkToNode);
+		}
+	}
 }
