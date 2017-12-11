@@ -11,9 +11,9 @@ position: 721,130
 	T: At least I think that's his name...
 	Y: ...sent me.
 	H: Give him my gratitude for me, please.
-	N: The homeless guy eats the fish
+	N: The homeless guy eats the fish.
 	<<set $fish to 0>>
-	H: Here, take this. I don't need it anymore.
+	H: Here, take this. I don't want it anymore.
 	[[Take the box.|Homeless.TakeBox]]
 <<else>>
 	H: What brings you to Pryshore?

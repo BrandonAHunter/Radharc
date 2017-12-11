@@ -7,7 +7,8 @@ public class ChangeScene : MonoBehaviour {
 
 	void Start(){
 		if (SceneManager.GetActiveScene ().name != "Map" && SceneManager.GetActiveScene ().name != "Options Menu"
-			&& SceneManager.GetActiveScene ().name != "Letter" && SceneManager.GetActiveScene ().name != "Pause") {
+			&& SceneManager.GetActiveScene ().name != "Letter" && SceneManager.GetActiveScene ().name != "Pause"
+			&& SceneManager.GetActiveScene ().name != "Credits") {
 			GameManager.Instance.LastScene = SceneManager.GetActiveScene ().name;
 		}
 	}

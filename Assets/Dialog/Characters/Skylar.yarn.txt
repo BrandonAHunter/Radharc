@@ -6,32 +6,26 @@ position: 721,130
 <<if $skylar is false>>
 	<<if $glasses is 2>>
 		S: Pssst... Hey you!
-		Y: Me?" you say.
-		S: Yeah. You're [$name], right?
-		How the heck did they know that?
+		Y: Me?
+		S: Yes. You're [$name], right?
+		T: How did they know that?
 		S: Listen, I have something to discuss with you, but it's best done inside.
-		You squint.
+		N: You squint.
 		S: You can trust me.
+		<<skylar in house>>
 		[[Goodbye|Skylar.Exit]]
-	<<elseif $glasses is 3>>
+	<<elseif $glasses is 4>>
 		Y: Here are the glasses.
-		S: I knew it~~!
+		S: I knew it!
 		Y: What happened?
-		Skylar grabs your shoulders.
+		N: Skylar grabs your shoulders.
 		S: These are the Elder White Mage's goggles! I was right about trusting you!
-		I am so confused... This guy... girl?... person... is insane.
-		S: It's official. I will join you on your quest to save Éan.
-		Skylar has joined your party
-		Y: Woah, woah, woah. What?
-		S: You're a White Mage, right? Only a White Mage could have rebuilt these.
-		Y: I had no knowledge of these things before today!
+		T: I am so confused... This... person... is insane.
+		S: You're not a White Mage but... Only a White Mage could have rebuilt these.
+		Y: I had no knowledge of this before today!
 		S: Then I will provide you with the information you need to succeed.
 		<<set $skylar to true>>
-		[[Goodbye|Skylar.Exit]]
-	<<elseif $glasses < 2>>
-		S: Yes.. Yes this is right
-		S: I am busy, leave me alone
-		[[Goodbye|Skylar.Exit]]
+		[[Goodbye.|Skylar.Exit]]
 	<<endif>>
 <<elseif $skylar is true>>
 	S: Hello. Need to know anything?
@@ -40,8 +34,41 @@ position: 721,130
 	Y: It's a bit strange...
 	S: Well, you're not one to talk of strangeness. You were traveling alone, were you not? It's odd for one of your age to travel by themselves.
 	Y: Point taken.
-	[[Goodbye->Skylar.Exit]]
+	[[Goodbye.|Skylar.Exit]]
 <<endif>>
+===
+
+title: Skylar.House
+tags: 
+colorID: 0
+position: 721,130
+---
+<<if $glasses is 2>>
+	S: I bet you're wondering how I know your name.
+	S: Éan told me.
+	Y: Who is that?
+	S: It's the girl. Well, it's the name I gave her.
+	T: Éan, huh? Suits her well.
+	S: I bet you are curious to who I am, right [$name]? Please feel free to call me Skylar.
+	Y: What did you want to talk to me about?
+	S: I wish to tell you of the past of this land. It may seem peaceful now, but not too long ago, there was a devistating war.
+	Y: Doesn't look like there was a war.
+	S: Why don't you think so?
+	Y: There are no ruins, that I can tell of.
+	S: That's because they lie in the forest. It's past Norburn, where no mortal dare lies foot.
+	Y: So what happened?
+	S: Well, it's a long story. There is a book in here that can go into more detail than I can.
+	[[Ok.|Skylar.BookLoc]]
+<<endif>>
+===
+
+title: Skylar.BookLoc
+tags: 
+colorID: 0
+position: 721,130
+---
+S: You can find it on my desk.
+<<book clickable>>
 ===
 
 title: Skylar.Exit

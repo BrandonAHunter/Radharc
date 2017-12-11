@@ -4,16 +4,16 @@ colorID: 0
 position: 524,111
 ---
 <<if $fish is 1>>
-	Y: I Caught The Fish!
-	Gi: Here, I will cook it for yer. tell me when you think it's cooked enough.
+	Y: I caught the fish!
+	Gi: Here, I'll cook it for ya. Tell me when you think it's cooked enough.
 	Y: Looks good thank you.
-	Gi: I found this strang peice of metal in the fish, yer want it.
-	[[Thank you|Fish.bye]]
+	Gi: I found this strange peice of metal in the fish, ya want it?
+	[[Yes, thank you.|Fish.bye]]
 <<else>>
-	Gi: Looks like you ran out of worms.
+	Gi: Looks like you ran outta worms.
 	Gi: Would you like some more?
-	[[Try Again|Fish.tryAgain]]
-	[[Go Back to Towm|Fish.bye]]
+	[[Try Again.|Fish.tryAgain]]
+	[[Go back to town.|Fish.bye]]
 <<endif>>
 ===
 
@@ -22,8 +22,8 @@ tags:
 colorID: 0
 position: 524,111
 ---
-Gi: Here are 5 more worms
-Gi: Try Catching one this time
+Gi: Here are 5 more worms.
+Gi: Try catching one this time, eh?
 <<start fishing game>>
 ===
 
@@ -32,6 +32,6 @@ tags:
 colorID: 0
 position: 524,111
 ---
-Gi: See yer later
+Gi: See ya later.
 <<go to town>>
 ===

@@ -9,27 +9,27 @@ position: 524,111
 		E: Hello...
 		Y: What are you doing?
 		E: I'm waiting for someone.
-		[[Ask about person|Eon.Person]]
-		[[Introduce yourself|Eon.Introduce]]
+		[[Ask who she is waiting for.|Eon.Person]]
+		[[Introduce yourself.|Eon.Introduce]]
 	<<else>>
     	T: I don't have any new information.
-    	[[Leave|Eon.Exit]]
+    	[[Leave.|Eon.Exit]]
 	<<endif>>
 <<endif>>
 <<if $q > 0>>
     N: I don't have any new information.
-    [[Leave|Eon.Exit]]
+    [[Leave.|Eon.Exit]]
 <<endif>>
 <<if $key is 3>>
 	E: You have returned.
 	Y: Of course.
 	E: I assume... you found a way?
-	N: You hold up the built key
+	N: You hold up the built key.
 	<<if $morality < 5>>
-		[[Unlock door|Eon.End]]
+		[[Unlock door.|Eon.End]]
 	<<endif>>
 	<<if $morality > 5>>
-		[[Unlock door|Eon.GoodEnd]]
+		[[Unlock door.|Eon.GoodEnd]]
 	<<endif>>
 <<endif>>
 ===
@@ -39,16 +39,16 @@ tags:
 colorID: 0
 position: 524,111
 ---
-	Y: Who are you waiting on?
+	Y: Who are you waiting for?
 	E: I'm waiting for someone to open this door.
 	Y: Oh. Maybe I can try?
 	E: It's not that simple. It's locked. I need someone with the key.
 	Y: I'll track them down for you to get it open!
 	E: Good luck, um...
-	Y: [$name]
+	Y: [$name].
 	E: [$name]... Good luck to you, [$name].
 	<<set $kyran to true>>
-	[[Leave|Eon.Exit]] 
+	[[Leave.|Eon.Exit]] 
 ===
 
 title: Eon.Introduce
@@ -61,13 +61,13 @@ position: 524,111
 	Y: Well, im gonna go now.
 	E: WAIT!
 	Y: Yes?
-	E: Please let me out.
+	E: Please, let me out.
 	Y: I thought you were waiting for someone.
 	E: I... think I am... All I know is that I can't open the door.
 	Y: Oh, let me try...
 	N: Seems like it's locked.
 	N: You look at the girl.
-	Y: We'll figure this out.
+	Y: I'll figure this out.
 	<<set $kyran to true>>
 	[[Leave|Eon.Exit]]
 ===
@@ -91,5 +91,5 @@ tags:
 colorID: 6
 position: 211,417
 ---
-E: Bye.
+E: Goodbye.
 ===

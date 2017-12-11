@@ -6,28 +6,28 @@ position: 721,130
 <<if $q is 2>>
 	Gg: WHO GOES THERE?!
 	Y: I'm sorry. I didn't mean to intrude.
-	Gg: Better watch out, boy. This aint no safe place to be romin' round, ya hear?
+	Gg: Better watch out, boy. This ain't no safe place to be romin' round, ya hear?
 	Y: What makes it so dangerous?
 	Gg: Them danggone bats. They WILL suck the blood right out of ya.
 	N: There is a slight pause.
-	Gg: You know what? I could use a young'un to do some things for me.
+	Gg: You know what? I could use a young'un to do some things for me...
 	Y: What do you need?
 	Gg: Could you do an old man like me a favor and fix my tractor? I seem to have lost the wheel.
 	<<set $q to 3>>
 <<elseif $q is 3>>
-	Gg: Yes?
+	Gg: WHO'S THERE?!
 	<<if $bats is "dead">>
-		[[I killed the bats.|Farmer.Bats]]
+		[[Uhm, I killed the bats.|Farmer.Bats]]
 	<<endif>>
 	<<if $tractor is "fixed">>
-		[[I fixed the tractor.|Farmer.Tractor]]
+		[[I fixed your tractor.|Farmer.Tractor]]
 	<<endif>>
 <<elseif $q is 4>>
-	Gg: Thank you for patching up my tractor. Now I can start planting for next season.
+	Gg: Thank ya for patching up my tractor. Now I can start planting for next season.
 <<elseif $q is 5>>
-	Gg: It's almost time to start planting again. It's all I've ever known.
+	Gg: It's almost time to start planting again.
 <<endif>>
-[[Goodbye|Farmer.Exit]] 
+[[Goodbye.|Farmer.Exit]] 
 ===
 
 title: Farmer.Bats
@@ -36,7 +36,7 @@ colorID: 0
 position: 721,130
 ---
 Gg: Oh! Thank you for killing those peeky blood-suckers for me!
-Gg: I would have gone myself, but those dangone mountain slopes are too steep.
+Gg: I woulda gone myself, but those dangone mountain slopes are too steep!
 Y: Don't mention it...
 ===
 
@@ -45,10 +45,10 @@ tags:
 colorID: 0
 position: 721,130
 ---
-Gg: Well then. I should thank you somehow.
+Gg: Well then, I should thank you somehow.
 N: He rummages through some of his pockets.
 Gg: I have no use for this. Haven't for a long time.
-N: He hands you the rim of some spectacles.
+N: He hands you half of some goggles.
 <<set $glasses to 2>>
 <<set $q to 4>>
 ===
@@ -58,5 +58,5 @@ tags:
 colorID: 0
 position: 721,130
 ---
-Gg: Bye.
+Gg: Goodbye.
 ===

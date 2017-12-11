@@ -38,6 +38,10 @@ public class MapManager : MonoBehaviour {
 				GameManager.Instance.FairmountToTalgor = true;
 			}
 		}
+		if (GameManager.Instance.DialogVariables["$glasses"].AsNumber == 3) {
+			towns [4].gameObject.GetComponent<BoxCollider> ().enabled = true;
+			locks [3].gameObject.GetComponent<SpriteRenderer> ().enabled = false;
+		}
 	}
 
 	void Update(){

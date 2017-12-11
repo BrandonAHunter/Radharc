@@ -7,16 +7,16 @@ position: 524,111
 	Y: This tractor looks broken. It seems to be missing a front wheel.
 <<endif>>
 <<if $wheelsm is true>>
-	[[Try Small Wheel|Tracktor.SmallWheel]]
+	[[Try small wheel.|Tracktor.SmallWheel]]
 <<endif>>
 <<if $wheelmd is true>>
-	[[Try Medium Wheel|Tracktor.MediumWheel]]
+	[[Try medium wheel.|Tracktor.MediumWheel]]
 <<endif>>
 <<if $wheellg is true>>
-	[[Try Large Wheel|Tracktor.LargeWheel]]
+	[[Try large wheel.|Tracktor.LargeWheel]]
 <<endif>>
 <<if $tractor is "fixed">>
-	Y: I did a good job fixing this tractor.
+	Y: I hope it works with a fruit cart wheel...
 <<endif>>
 ===
 
@@ -26,9 +26,12 @@ colorID: 0
 position: 524,111
 ---
 N: You try to use the small wheel.
-N: The wheel is a fit.
+N: The small wheel is a fit.
 <<set $tractor to "fixed">>
 <<set $wheelsm to false>>
+<<if $wheellg is true>>
+Y: Guess I don't need this large wheel.
+<<endif>>
 <<set $wheellg to false>>
 ===
 
@@ -39,6 +42,6 @@ position: 524,111
 ---
 N: You try to use the larger wheel.
 N: The wheel is way to big to fit the tractor.
-Y: Oh... Well that won't work.
+Y: Oh... Well that won't work. Guess I don't need this wheel.
 <<set $wheellg to false>>
 ===

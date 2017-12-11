@@ -5,8 +5,8 @@ position: 721,130
 ---
 <<if $q is 0>>
 	K: Hello there, young sir! May I interest you in some fruits?
-	[[No, thanks|Kyran.Exit]]
-	[[Sure|Kyran.Fruit]]
+	[[No, thanks.|Kyran.Exit]]
+	[[Sure?|Kyran.Fruit]]
 	<<if $kyran is true>>
 		[[Can you tell me about the girl?|Kyran.Girl]]
 	<<endif>>
@@ -18,8 +18,8 @@ position: 721,130
 	<<if $glasses is 1  and ! visited("Kyran.Lens")>>
 		[[I got this spectacle peice from a box|Kyran.Lens]]
 	<<endif>>
-	[[Can i get some fruit?|Kyran.Fruit]]
-	[[Not yet|Kyran.Exit]]
+	[[Can I get some fruit?|Kyran.Fruit]]
+	[[No thanks.|Kyran.Exit]]
 <<elseif $q is 3>>
 	<<if $tractor is "broken" and $wheelSmGet is false>>
 		K: Need anything, my boy?
@@ -66,7 +66,7 @@ Y: So you just ignore her. Okay...
 K: My boy, could I request something of you?
 T: He's clearly avoiding the subject...
 [[Tell me more about the girl.|Kyran.Girl2]]
-[[Go on|Kyran.GoOn]]
+[[What is it?|Kyran.GoOn]]
 ===
 
 title: Kyran.Girl2
@@ -78,7 +78,7 @@ position: 721,130
 <<set $curiosity to $curiosity + 1>>
 K: Like I said, boy, this is the first time I have stepped in this town. How am I supposed to know what this town's customs are?
 T: He sounds pretty annoyed...
-[[Never Mind, then.|Kyran.GoOn]]
+[[Never mind, then.|Kyran.GoOn]]
 ===
 
 title: Kyran.GoOn
@@ -94,7 +94,7 @@ Y: Why can't you leave Ader?
 K: If I leave, then I risk wasting all of these... fruits. I would appreciate it if you went in my stead.
 Y: I don't have any food to give. Any chance I can take him a banana or something?
 K: He only eats fish. But it's okay. There is a fisherman named Gilroy in that town. He will help you.
-[[Goodbye|Kyran.Exit]]
+[[Goodbye.|Kyran.Exit]]
 ===
 
 title: Kyran.Key

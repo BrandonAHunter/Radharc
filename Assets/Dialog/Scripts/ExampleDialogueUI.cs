@@ -44,6 +44,9 @@ namespace Yarn.Unity.Example {
     public class ExampleDialogueUI : Yarn.Unity.DialogueUIBehaviour
     {
 		public GameObject Letter;
+		public GameObject obj1;
+		public GameObject obj2;
+		public GameObject obj3;
         /// The object that contains the dialogue and the options.
         /** This object will be enabled when conversation starts, and 
          * disabled when it ends.
@@ -132,6 +135,10 @@ namespace Yarn.Unity.Example {
 				line.text = line.text.Replace ("Gg: ", "");
 				people [1].SetActive (true);
 			}
+			else if(line.text.StartsWith("F: ")){
+				line.text = line.text.Replace ("F: ", "");
+				people [1].SetActive (true);
+			}
             // Show the text
             lineText.gameObject.SetActive (true);
 
@@ -169,7 +176,8 @@ namespace Yarn.Unity.Example {
                 continuePrompt.SetActive (false);
 
 			for (int i = 0; i < people.Length; i++) {
-				people [i].SetActive (false);
+				if(people[i] != null)
+					people [i].SetActive (false);
 			}
         }
 
@@ -230,6 +238,9 @@ namespace Yarn.Unity.Example {
 			else if(command.text == "go to town"){
 				SceneManager.LoadScene ("Locations/" + GameManager.Instance.LastScene);
 			}
+			else if(command.text == "go to house"){
+				SceneManager.LoadScene ("Locations/Skylar House");
+			}
 			else if(command.text == "go to cave"){
 				SceneManager.LoadScene ("Mini Games/Bat Attack");
 			}
@@ -245,6 +256,21 @@ namespace Yarn.Unity.Example {
 			}
 			else if(command.text == "disable wheel"){
 				GameObject.Find ("Wheel").SetActive (false);
+			}
+			else if(command.text == "skylar in house"){
+				obj1.SetActive (false);
+				obj2.SetActive (true);
+			}
+			else if(command.text == "book unclickable"){
+				obj1.SetActive (false);
+				obj2.SetActive (false);
+				obj3.SetActive (true);
+			}
+			else if(command.text == "book clickable"){
+				obj1.SetActive (true);
+			}
+			else if(command.text == "go to wall"){
+				SceneManager.LoadScene ("Locations/Wall");
 			}
             yield break;
         }

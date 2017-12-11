@@ -89,3 +89,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Pause.unity
     guid: 6a7cccb22e24a495aa2de1ff25778464
+  - enabled: 1
+    path: Assets/Locations/Wall.unity
+    guid: bfebe2d1803e643fba751e0ee0364245
+  - enabled: 1
+    path: Assets/Credits.unity
+    guid: bbc03e7f34a2d4125a7d66b2f7c52049
