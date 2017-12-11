@@ -36,7 +36,7 @@ EditorBuildSettings:
     path: Assets/Locations/Norburn.unity
     guid: 7eb856a4ef8b84db6a271dace23fb0a8
   - enabled: 1
-    path: Assets/Locations/Mt. of Talgors.unity
+    path: Assets/Locations/Mt. of Talgors_Replace.unity
     guid: e99a8d6d3c0304719afe8f035d80219a
   - enabled: 0
     path: 
@@ -45,7 +45,7 @@ EditorBuildSettings:
     path: Assets/Mini Games/Owl See, Owl Do.unity
     guid: cce3f673872694cc8af30412ca10c32c
   - enabled: 1
-    path: Assets/Mini Games/Bat Attack.unity
+    path: Assets/Mini Games/Bat AttackReplace.unity
     guid: 58075ae0d22a147cfa2a6afdfb8f1577
   - enabled: 1
     path: Assets/Mini Games/Photo Shuffle.unity
@@ -92,6 +92,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Locations/Wall.unity
     guid: bfebe2d1803e643fba751e0ee0364245
+<<<<<<< HEAD
   - enabled: 1
     path: Assets/Credits.unity
     guid: bbc03e7f34a2d4125a7d66b2f7c52049
+=======
+>>>>>>> cd5f70d3493cdeef7bb6e2f4ecae9be2d4aca599
