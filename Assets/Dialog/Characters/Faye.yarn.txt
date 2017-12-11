@@ -1,0 +1,33 @@
+title: Faye
+tags: 
+colorID: 0
+position: 524,111
+---
+<<if $fayeSpeak is false>>
+	Y: Hello. My name is [$name]. Who are you?
+	F: Hi[$name]. I'm Faye. 
+	Y: Do you live in that house up there?
+	F: Yeah, why do you care?
+	Y: I was wondering about Brightsage Forest. A... friend... of mine told me about it.
+	F: Well, it's just down the path.  
+	Y: Are your parents okay with you being this close to the forest? It could be dangerous. Haven't you heard about the blood sucking bats in the area?  
+	F: There aren't any bats in the forest. I can handle myself. As for my father, it doesn't matter what he thinks anymore.
+	N: She makes an odd expression. 
+	Y: Uh... okay, well, be safe. I'm going to check out the forest.
+	<<set $fayeSpeak to true>>
+<<else>>
+	F: Yes?
+	Y: Just checking on you.
+	F: Oh... Okay. I'm fine. 
+	Y: Alright then.
+	[[Goodbye.|Faye.bye]]
+<<endif>>
+===
+
+title: Faye.bye
+tags: 
+colorID: 0
+position: 524,111
+---
+F: Bye bye.
+===

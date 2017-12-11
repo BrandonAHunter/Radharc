@@ -1,0 +1,41 @@
+title: Door.Enter
+tags: 
+colorID: 0
+position: 524,111
+---
+	[[Enter Skylar's house.|Door.EnterHouse]]
+	[[Leave.|Door.Leave]]
+===
+
+title: Door.EnterHouse
+tags: 
+colorID: 0
+position: 524,111
+---
+	<<go to house>>
+===
+
+title: Door.Exit
+tags: 
+colorID: 0
+position: 524,111
+---
+	[[Leave Skylar's house.|Door.ExitHouse]]
+	[[Stay.|Door.Leave]]
+===
+
+title: Door.ExitHouse
+tags: 
+colorID: 0
+position: 524,111
+---
+	<<go to town>>
+===
+
+title: Door.Leave
+tags: 
+colorID: 0
+position: 524,111
+---
+	Y: Maybe later.
+===

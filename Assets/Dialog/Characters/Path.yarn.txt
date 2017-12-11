@@ -1,0 +1,24 @@
+title: Path
+tags: 
+colorID: 0
+position: 524,111
+---
+[[Head to wall.|Path.go]]
+[[Not now.|Path.stay]]
+===
+
+title: Path.go
+tags: 
+colorID: 0
+position: 524,111
+---
+<<go to wall>>
+===
+
+title: Path.stay
+tags: 
+colorID: 0
+position: 524,111
+---
+T: I should stay a little longer.
+===

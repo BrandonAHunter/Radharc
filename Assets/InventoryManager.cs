@@ -80,7 +80,18 @@ public class InventoryManager : MonoBehaviour {
 				inventory [4].SetActive (true);
 				ActiveInventory.Add (inventory [4]);
 			}
-			inventory [4].GetComponentInChildren<Text> ().text = GameManager.Instance.DialogVariables ["$glasses"].AsNumber + "";
+		}
+		if (GameManager.Instance.DialogVariables ["$glasses"].AsNumber > 1) {
+			if (!inventory [11].activeInHierarchy) {
+				inventory [11].SetActive (true);
+				ActiveInventory.Add (inventory [11]);
+			}
+		}
+		if (GameManager.Instance.DialogVariables ["$glasses"].AsNumber > 2) {
+			if (!inventory [12].activeInHierarchy) {
+				inventory [12].SetActive (true);
+				ActiveInventory.Add (inventory [12]);
+			}
 		}
 		if (GameManager.Instance.DialogVariables ["$wheellg"].AsBool) {
 			if (!inventory [6].activeInHierarchy) {

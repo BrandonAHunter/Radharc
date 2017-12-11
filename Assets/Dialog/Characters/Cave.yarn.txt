@@ -3,9 +3,9 @@ tags:
 colorID: 0
 position: 524,111
 ---
-	Y: These are the bats the farmer was talking about... I dont know if i should enter.
-	[[Enter|Cave.Enter]]
-	[[Leave|Cave.Leave]]
+	Y: These are the bats the farmer was talking about... Should I go in?
+	[[Enter.|Cave.Enter]]
+	[[Leave.|Cave.Leave]]
 ===
 
 title: Cave.Win
@@ -13,8 +13,8 @@ tags:
 colorID: 0
 position: 524,111
 ---
-	Y: Thats the last of them... Wait whats this?
-	Y: I Found another metal peice of what seems like a key...
+	Y: That's the last of them... Wait whats this?
+	Y: I found another metal peice of what seems like a key...
 	<<set $bats to "dead">>
 	<<set $key to $key + 1>>
 	<<go to town>>
@@ -25,7 +25,7 @@ tags:
 colorID: 0
 position: 524,111
 ---
-	Y: There are to many bats I need to get out of here before its to late!!
+	Y: There are to many bats, I need to get out of here before its to late!!
 	<<go to town>>
 ===
 
@@ -43,5 +43,5 @@ tags:
 colorID: 0
 position: 524,111
 ---
-	Y: I will come back another time... Maybe
+	Y: I will come back another time... Maybe.
 ===

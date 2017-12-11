@@ -8,9 +8,11 @@ public class NPCHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	public GameObject[] invHover;
 
 	void OnMouseOver(){
+		if(npcHover != null)
 		npcHover.SetActive (true);
 	}
 	void OnMouseExit(){
+		if(npcHover != null)
 		npcHover.SetActive (false);
 	}
 

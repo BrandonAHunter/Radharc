@@ -1,0 +1,14 @@
+title: Book
+tags: 
+colorID: 0
+position: 524,111
+---
+N: There are many riddles, but you get to the end of them all.
+N: There are two magnifying lenses. It looks like they will attach to the goggles. 
+<<set $glasses to 3>>
+<<set $q to 4>>
+S: Hey, what's that?
+Y: There are two magnifying lenses. It looks like may attach to the goggles.
+S: Well, when you finish building them, come see me. I think I might know what they are.
+<<book unclickable>>
+===

@@ -3,9 +3,9 @@ tags:
 colorID: 0
 position: 524,111
 ---
-	T: This Box Looks like it has a puzzle ring on it
-	[[Try to Open|Inventory.Box.Open]]
-	[[Leave Alone|Inventory.Leave]]
+	T: This box looks like it has a puzzle ring on it.
+	[[Try to open.|Inventory.Box.Open]]
+	[[Leave it alone.|Inventory.Leave]]
 ===
 
 title: Inventory.Box.Open
@@ -21,9 +21,9 @@ tags:
 colorID: 0
 position: 524,111
 ---
-	T: This is a letter from my father
-	[[Read|Inventory.Letter.Open]]
-	[[Leave Alone|Inventory.Leave]]
+	T: This is a letter from my father.
+	[[Read it.|Inventory.Letter.Open]]
+	[[Leave it alone.|Inventory.Leave]]
 ===
 
 title: Inventory.Letter.Open
@@ -39,7 +39,7 @@ tags:
 colorID: 0
 position: 524,111
 ---
-	T: I am not that hungry right now...
+	T: I am not hungry right now...
 ===
 
 title: Inventory.Fish
@@ -63,7 +63,7 @@ tags:
 colorID: 0
 position: 524,111
 ---
-	T: Broken glasses... not very useful
+	T: Broken goggles... not very useful, yet.
 ===
 
 title: Inventory.Wheel
